@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">H2O Sustentable</title>
+  <defs>
+    <linearGradient id="dropGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#0E7C86"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 4 C20 4 6 22 6 34 C6 43.4 12.7 50 20 50 C27.3 50 34 43.4 34 34 C34 22 20 4 20 4 Z"
+        fill="url(#dropGrad)"/>
+  <path d="M13 33 C13 27 16.5 22 20 18" stroke="#E9FFFB" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <text x="46" y="30" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="21" fill="#0B2530" letter-spacing="0.5">H2O</text>
+  <text x="46" y="47" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="12.5" fill="#0E7C86" letter-spacing="2.5">SUSTENTABLE</text>
+</svg>
