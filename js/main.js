@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = [
       'Mantenimiento de Albercas',
       'Tratamiento de Agua',
+      'Filtración y Climatización',
+      'Venta de Equipos e Insumos',
+      'Medición con Precisión',
       'Tecnología Sustentable',
       'Puerto Vallarta',
       'Riviera Nayarit',
@@ -117,16 +120,41 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     };
 
+    let ripples = [];
+
     const initParticles = () => {
-      const count = window.innerWidth < 768 ? 18 : 34;
+      const count = window.innerWidth < 768 ? 16 : 28;
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random() * 2.4 + 0.6,
-        vy: Math.random() * 0.35 + 0.12,
-        vx: (Math.random() - 0.5) * 0.15,
-        alpha: Math.random() * 0.4 + 0.15
+        r: Math.random() * 3.4 + 1.6,
+        vy: Math.random() * 0.32 + 0.10,
+        vx: (Math.random() - 0.5) * 0.12,
+        sway: Math.random() * Math.PI * 2,
+        swaySpeed: Math.random() * 0.02 + 0.006,
+        alpha: Math.random() * 0.35 + 0.12
       }));
+      ripples = [];
+    };
+
+    // Dibuja una gota de agua (punta hacia arriba)
+    const drawDroplet = (x, y, r, alpha) => {
+      ctx.beginPath();
+      ctx.moveTo(x, y - r * 1.9);
+      ctx.quadraticCurveTo(x + r, y - r * 0.35, x + r, y);
+      ctx.arc(x, y, r, 0, Math.PI, false);
+      ctx.quadraticCurveTo(x - r, y - r * 0.35, x, y - r * 1.9);
+      ctx.closePath();
+      const g = ctx.createLinearGradient(x, y - r * 1.9, x, y + r);
+      g.addColorStop(0, `rgba(94,234,212,${alpha * 0.5})`);
+      g.addColorStop(1, `rgba(94,234,212,${alpha})`);
+      ctx.fillStyle = g;
+      ctx.fill();
+      // brillo
+      ctx.beginPath();
+      ctx.arc(x - r * 0.3, y - r * 0.15, r * 0.32, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(240,255,252,${alpha * 0.9})`;
+      ctx.fill();
     };
 
     resize();
@@ -135,15 +163,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let raf;
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
+
       particles.forEach(p => {
+        p.sway += p.swaySpeed;
         p.y -= p.vy;
-        p.x += p.vx;
-        if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(94,234,212,${p.alpha})`;
-        ctx.fill();
+        p.x += p.vx + Math.sin(p.sway) * 0.25;
+        if (p.y < -14) {
+          p.y = h + 14;
+          p.x = Math.random() * w;
+          // al "reaparecer" abajo, genera una onda ocasional
+          if (Math.random() < 0.5) {
+            ripples.push({ x: p.x, y: h - Math.random() * 18, r: 1, alpha: 0.28 });
+          }
+        }
+        drawDroplet(p.x, p.y, p.r, p.alpha);
       });
+
+      ripples.forEach(rp => {
+        rp.r += 0.7;
+        rp.alpha *= 0.965;
+        ctx.beginPath();
+        ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(94,234,212,${rp.alpha})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+      ripples = ripples.filter(rp => rp.alpha > 0.02);
+
       raf = requestAnimationFrame(draw);
     };
     draw();
@@ -178,6 +224,47 @@ document.addEventListener('DOMContentLoaded', () => {
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       window.open(url, '_blank', 'noopener,noreferrer');
     });
+  }
+
+  /* ── Promo modal — "Si contratas hoy mismo" ──────── */
+  const promo = document.getElementById('promo-overlay');
+  if (promo) {
+    const promoClose = document.getElementById('promo-close');
+    const STORE_KEY = 'h2o_promo_seen';
+    let promoShown = false;
+
+    let alreadySeen = false;
+    try { alreadySeen = sessionStorage.getItem(STORE_KEY) === '1'; } catch (e) {}
+
+    const openPromo = () => {
+      if (promoShown || alreadySeen) return;
+      promoShown = true;
+      promo.classList.add('open');
+      promo.setAttribute('aria-hidden', 'false');
+      try { sessionStorage.setItem(STORE_KEY, '1'); } catch (e) {}
+    };
+    const closePromo = () => {
+      promo.classList.remove('open');
+      promo.setAttribute('aria-hidden', 'true');
+    };
+
+    if (!alreadySeen) {
+      // Aparece tras 8 s de navegación…
+      const timer = setTimeout(openPromo, 8000);
+      // …o al detectar intención de salida (mouse hacia la parte superior)
+      const onExitIntent = (e) => {
+        if (e.clientY <= 0) { clearTimeout(timer); openPromo(); }
+      };
+      document.addEventListener('mouseout', onExitIntent);
+    }
+
+    promoClose.addEventListener('click', closePromo);
+    promo.addEventListener('click', (e) => { if (e.target === promo) closePromo(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && promo.classList.contains('open')) closePromo();
+    });
+    // Cerrar al tocar cualquiera de los botones de contacto
+    promo.querySelectorAll('a').forEach(a => a.addEventListener('click', closePromo));
   }
 
 });

@@ -50,6 +50,7 @@
           <ul class="nav-links">
             <li><a href="#why">Nosotros</a></li>
             <li><a href="#ambientes">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
             <li><a href="#proceso">Proceso</a></li>
             <li><a href="#producto">Tecnología</a></li>
             <li><a href="#contacto">Contacto</a></li>
@@ -71,6 +72,7 @@
     <div id="mob-menu" aria-label="Menú móvil">
       <a href="#why">Nosotros</a>
       <a href="#ambientes">Servicios</a>
+      <a href="#galeria">Galería</a>
       <a href="#proceso">Proceso</a>
       <a href="#producto">Tecnología</a>
       <a href="#contacto">Contacto</a>
@@ -116,6 +118,15 @@
             Tratamiento de Agua · Puerto Vallarta · Riviera Nayarit · CDMX
           </div>
 
+          <!-- Emblema H2O Sustentable — visible en portada -->
+          <img src="images/logo-h2o-sustentable-light.svg" alt="H2O Sustentable" class="hero-emblem">
+
+          <!-- Eslogan de portada -->
+          <p class="hero-slogan">
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+            La información correcta empieza con la medición correcta.
+          </p>
+
           <!-- Animated title -->
           <h1 class="hero-title" id="hero-heading">
             <span class="line"><span>Agua pura,</span></span>
@@ -155,6 +166,16 @@
             <div class="trust-item">
               <i class="fa-solid fa-clock"></i>
               Emergencias 24/7
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-file-circle-check"></i>
+              En trámite ante COFEPRIS
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <i class="fa-solid fa-user-graduate"></i>
+              Asesoría de Ing. QFB
             </div>
           </div>
 
@@ -234,6 +255,26 @@
           </div>
 
         </div>
+
+        <!-- Credenciales: COFEPRIS + Ing. QFB -->
+        <div class="cred-band">
+          <div class="cred-item reveal">
+            <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
+            <div>
+              <h4>Trámites ante COFEPRIS en proceso</h4>
+              <p>Trabajamos para operar con respaldo sanitario oficial, alineando nuestros protocolos a los requisitos de la autoridad.</p>
+              <span class="cred-tag">Cumplimiento sanitario</span>
+            </div>
+          </div>
+          <div class="cred-item reveal d1">
+            <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+            <div>
+              <h4>Asesoría de un Ingeniero QFB</h4>
+              <p>Cada plan de tratamiento cuenta con el acompañamiento de un Químico Farmacobiólogo, para una dosificación segura y basada en evidencia.</p>
+              <span class="cred-tag">Respaldo profesional</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -263,8 +304,10 @@
 
           <!-- Mantenimiento y limpieza -->
           <div class="amb-card reveal">
+            <!-- TODO: colocar la nueva foto del cliente en images/mantenimiento-limpieza-2.jpg (mientras tanto usa la anterior) -->
             <img class="amb-img"
-              src="images/limpieza-mantenimiento-alberca.jpg"
+              src="images/mantenimiento-limpieza-2.jpg"
+              onerror="this.onerror=null;this.src='images/limpieza-mantenimiento-alberca.jpg';"
               alt="Mantenimiento y limpieza profesional de alberca residencial en Puerto Vallarta">
             <div class="amb-overlay">
               <div class="amb-icon-wrap"
@@ -275,14 +318,20 @@
               <h3>Mantenimiento y Limpieza</h3>
               <p>Cepillado, desazolve y limpieza de línea de flotación para una alberca impecable todo el año.</p>
               <div class="amb-temp">Servicio Periódico</div>
+              <a class="amb-cta" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5213221925067?text=Hola%2C%20quiero%20cotizar%20el%20servicio%20de%20mantenimiento%20y%20limpieza%20para%20mi%20alberca.">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+              </a>
             </div>
           </div>
 
           <!-- Tratamiento de agua -->
           <div class="amb-card reveal d1">
+            <!-- TODO: colocar la nueva foto de análisis de agua del cliente en images/analisis-agua-2.jpg -->
             <img class="amb-img"
-              src="images/agua-cristalina-tratada.jpg"
-              alt="Agua de alberca cristalina y libre de impurezas gracias al tratamiento de H2O Sustentable">
+              src="images/analisis-agua-2.jpg"
+              onerror="this.onerror=null;this.src='images/analizador-calidad-agua.jpg';"
+              alt="Análisis de la calidad del agua de alberca con equipo de medición profesional">
             <div class="amb-overlay">
               <div class="amb-icon-wrap"
                    style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3);"
@@ -292,6 +341,10 @@
               <h3>Análisis y Tratamiento de Agua</h3>
               <p>Medición de parámetros clave y dosificación precisa para un agua cristalina y equilibrada.</p>
               <div class="amb-temp">Precisión Certificada</div>
+              <a class="amb-cta" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5213221925067?text=Hola%2C%20quiero%20cotizar%20el%20an%C3%A1lisis%20y%20tratamiento%20de%20agua%20para%20mi%20alberca.">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+              </a>
             </div>
           </div>
 
@@ -309,10 +362,109 @@
               <h3>Filtración y Climatización</h3>
               <p>Instalación, revisión y reparación de sistemas de filtración y calentadores de alberca.</p>
               <div class="amb-temp">Tecnología Eficiente</div>
+              <a class="amb-cta" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5213221925067?text=Hola%2C%20quiero%20cotizar%20el%20servicio%20de%20filtraci%C3%B3n%20y%20climatizaci%C3%B3n%20para%20mi%20alberca.">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+              </a>
             </div>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         GALERÍA — Filtración y Climatización
+    ══════════════════════════════════════════════════ -->
+    <section id="galeria" aria-labelledby="galeria-heading">
+      <div class="container">
+
+        <div class="galeria-hdr reveal">
+          <div class="label">Galería · Filtración y Climatización</div>
+          <h2 class="section-title" id="galeria-heading">
+            Nuestro trabajo en <span class="gold">equipos e instalaciones</span>
+          </h2>
+          <p>
+            Instalación, mantenimiento y reparación de sistemas de filtración y climatización.
+            Además, comercializamos los insumos y equipos para mantener tu agua en su punto.
+          </p>
+        </div>
+
+        <!-- TODO: reemplazar las imágenes por las fotos que envió el cliente
+             (galeria-1.jpg … galeria-6.jpg). Mientras tanto se muestran imágenes de referencia. -->
+        <div class="galeria-grid reveal">
+          <div class="galeria-item">
+            <img src="images/galeria-1.jpg" onerror="this.onerror=null;this.src='images/sistema-filtracion-alberca.jpg';" alt="Sistema de filtración de alberca instalado por H2O Sustentable">
+            <span>Sistemas de filtración</span>
+          </div>
+          <div class="galeria-item">
+            <img src="images/galeria-2.jpg" onerror="this.onerror=null;this.src='images/calentador-alberca-tecnologia.jpg';" alt="Calentador y climatización de alberca">
+            <span>Climatización y calentadores</span>
+          </div>
+          <div class="galeria-item">
+            <img src="images/galeria-3.jpg" onerror="this.onerror=null;this.src='images/analizador-calidad-agua.jpg';" alt="Equipo de medición de calidad del agua">
+            <span>Equipos de medición</span>
+          </div>
+          <div class="galeria-item">
+            <img src="images/galeria-4.jpg" onerror="this.onerror=null;this.src='images/agua-cristalina-tratada.jpg';" alt="Resultado de agua cristalina tras filtración">
+            <span>Agua filtrada y equilibrada</span>
+          </div>
+          <div class="galeria-item">
+            <img src="images/galeria-5.jpg" onerror="this.onerror=null;this.src='images/limpieza-mantenimiento-alberca.jpg';" alt="Mantenimiento de cuarto de máquinas de alberca">
+            <span>Cuarto de máquinas</span>
+          </div>
+          <div class="galeria-item">
+            <img src="images/galeria-6.jpg" onerror="this.onerror=null;this.src='images/hero-alberca-puerto-vallarta.jpg';" alt="Alberca terminada con sistema de filtración eficiente">
+            <span>Proyectos terminados</span>
+          </div>
+        </div>
+
+        <!-- Venta de equipos e insumos -->
+        <div class="equipos-box reveal">
+          <h3>También vendemos equipos e insumos</h3>
+          <p>
+            Te asesoramos para elegir el equipo correcto y te surtimos los medios filtrantes
+            que tu sistema necesita, con la granulometría y calidad adecuadas.
+          </p>
+          <div class="equipos-tags">
+            <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Equipos de medición</span>
+            <span><i class="fa-solid fa-filter" aria-hidden="true"></i> Equipos de filtración</span>
+            <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Arenas sílica</span>
+            <span><i class="fa-solid fa-mountain" aria-hidden="true"></i> Antracita</span>
+            <span><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Zeolita</span>
+          </div>
+          <a class="equipos-cta" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/5213221925067?text=Hola%2C%20quiero%20cotizar%20equipos%20o%20insumos%20(medici%C3%B3n%2C%20filtraci%C3%B3n%2C%20arenas%2C%20antracita%20o%20zeolita).">
+            <i class="fa-brands fa-whatsapp"></i> Cotizar equipos por WhatsApp
+          </a>
+        </div>
+
+        <!-- Normas con las que trabajamos -->
+        <div class="normas-box reveal">
+          <h3>Trabajamos conforme a la normativa mexicana</h3>
+          <p>
+            Nuestros procesos de análisis y tratamiento se apegan a las normas oficiales
+            aplicables a agua potable, albercas y aguas residuales.
+          </p>
+          <div class="normas-list">
+            <div class="norma-card">
+              <div class="norma-code"><i class="fa-solid fa-droplet" aria-hidden="true"></i> NOM-127-SSA1</div>
+              <h4>Agua potable</h4>
+              <p>Límites permisibles de calidad del agua para uso y consumo humano.</p>
+            </div>
+            <div class="norma-card">
+              <div class="norma-code"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> NOM-245-SSA1</div>
+              <h4>Albercas</h4>
+              <p>Requisitos sanitarios y calidad del agua que deben cumplir las albercas.</p>
+            </div>
+            <div class="norma-card">
+              <div class="norma-code"><i class="fa-solid fa-recycle" aria-hidden="true"></i> NOM-001-SEMARNAT</div>
+              <h4>Aguas residuales</h4>
+              <p>Límites permisibles de contaminantes en descargas a cuerpos receptores.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -482,6 +634,67 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
+         CONFIANZA — Respaldo verificable (sin testimonios inventados)
+    ══════════════════════════════════════════════════ -->
+    <section id="confianza" aria-labelledby="conf-heading">
+      <div class="container">
+
+        <div class="confianza-hdr reveal">
+          <div class="label">Confianza y Respaldo</div>
+          <h2 class="section-title" id="conf-heading">
+            Compromisos que <span class="gold">sí podemos garantizarte</span>
+          </h2>
+          <p>
+            En lugar de promesas vacías, esto es lo que puedes verificar hoy mismo
+            sobre cómo trabajamos.
+          </p>
+        </div>
+
+        <blockquote class="confianza-quote reveal">
+          <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+          <p>Creemos que la confianza se construye con datos medibles, procesos transparentes
+             y respaldo profesional, no con promesas. Por eso cada servicio parte de una
+             medición real del agua, no de una suposición.</p>
+          <cite>— Equipo H2O Sustentable</cite>
+        </blockquote>
+
+        <div class="trust-badges-grid" role="list">
+          <div class="trust-badge reveal" role="listitem">
+            <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
+            <h4>Trámite COFEPRIS</h4>
+            <p>En proceso, para operar con respaldo sanitario oficial.</p>
+          </div>
+          <div class="trust-badge reveal d1" role="listitem">
+            <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+            <h4>Asesoría de Ing. QFB</h4>
+            <p>Dosificación supervisada por un Químico Farmacobiólogo.</p>
+          </div>
+          <div class="trust-badge reveal d2" role="listitem">
+            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+            <h4>Apego a normas NOM</h4>
+            <p>Agua potable, albercas y aguas residuales.</p>
+          </div>
+          <div class="trust-badge reveal d3" role="listitem">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            <h4>Cobertura en 3 regiones</h4>
+            <p>Puerto Vallarta, Riviera Nayarit y CDMX.</p>
+          </div>
+          <div class="trust-badge reveal" role="listitem">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <h4>Emergencias 24/7</h4>
+            <p>Atención disponible todos los días del año.</p>
+          </div>
+          <div class="trust-badge reveal d1" role="listitem">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            <h4>Enfoque sustentable</h4>
+            <p>Dosificación basada en mediciones, sin desperdicio de químicos.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
          SECTORES → COBERTURA
     ══════════════════════════════════════════════════ -->
     <section id="sectores" aria-labelledby="sec-heading">
@@ -560,17 +773,24 @@
               </li>
               <li class="ci-item">
                 <div class="ci-icon" aria-hidden="true">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div class="ci-body">
+                  <h4>Respaldo Técnico</h4>
+                  <p>Asesoría de un Ingeniero QFB y trámites ante COFEPRIS en proceso.</p>
+                </div>
+              </li>
+              <li class="ci-item">
+                <div class="ci-icon" aria-hidden="true">
                   <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 <div class="ci-body">
                   <h4>WhatsApp</h4>
                   <p>Escríbenos y cotizamos tu servicio.</p>
-                  <!-- TODO: reemplazar 52XXXXXXXXXX por el número real de WhatsApp de H2O Sustentable -->
-                  <a href="https://wa.me/52XXXXXXXXXX" target="_blank"
+                  <a href="https://wa.me/5213221925067?text=Hola%2C%20visit%C3%A9%20su%20sitio%20web%20y%20quiero%20cotizar%20el%20servicio%20para%20mi%20alberca." target="_blank"
                      rel="noopener noreferrer" class="ci-wa-link">
-                    Abrir chat →
+                    +52 322 192 5067 · Abrir chat →
                   </a>
-                  <span class="ci-note">Número pendiente de confirmar</span>
                 </div>
               </li>
             </ul>
@@ -579,8 +799,7 @@
           <!-- Form -->
           <div class="contact-form-wrap">
             <h3>Solicitar Cotización</h3>
-            <!-- TODO: reemplazar 52XXXXXXXXXX en data-wa-phone por el número real de WhatsApp -->
-            <form id="wa-form" novalidate data-wa-phone="52XXXXXXXXXX">
+            <form id="wa-form" novalidate data-wa-phone="5213221925067">
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="f-name">Nombre completo</label>
@@ -595,6 +814,8 @@
                     <option>Análisis y tratamiento de agua</option>
                     <option>Instalación de filtración</option>
                     <option>Climatización / Calentador</option>
+                    <option>Compra de equipos o insumos (arenas, antracita, zeolita)</option>
+                    <option>Asesoría con Ingeniero QFB</option>
                     <option>Servicio de emergencia</option>
                   </select>
                 </div>
@@ -632,8 +853,7 @@
           &copy; <span id="year"></span> H2O Sustentable. Todos los derechos reservados. Puerto Vallarta · Riviera Nayarit · CDMX.
         </p>
         <div class="footer-socials">
-          <!-- TODO: reemplazar 52XXXXXXXXXX por el número real de WhatsApp -->
-          <a href="https://wa.me/52XXXXXXXXXX" target="_blank"
+          <a href="https://wa.me/5213221925067" target="_blank"
              rel="noopener noreferrer" class="footer-soc" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
@@ -645,12 +865,47 @@
   <!-- ══════════════════════════════════════════════════════
        FLOATING WHATSAPP
   ══════════════════════════════════════════════════════ -->
-  <!-- TODO: reemplazar 52XXXXXXXXXX por el número real de WhatsApp -->
-  <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20visit%C3%A9%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20mantenimiento%20de%20mi%20alberca."
+  <a href="https://wa.me/5213221925067?text=Hola%2C%20visit%C3%A9%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20mantenimiento%20de%20mi%20alberca."
      target="_blank" rel="noopener noreferrer"
      class="wa-btn" aria-label="Contactar por WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
+
+  <!-- ══════════════════════════════════════════════════════
+       PROMO MODAL — "Si contratas hoy mismo"
+  ══════════════════════════════════════════════════════ -->
+  <div class="promo-overlay" id="promo-overlay" role="dialog" aria-modal="true"
+       aria-labelledby="promo-title" aria-hidden="true">
+    <div class="promo-card">
+      <button class="promo-close" id="promo-close" aria-label="Cerrar promoción">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="promo-top">
+        <span class="promo-kicker"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Promoción de hoy</span>
+        <h3 id="promo-title">Contrata hoy mismo y tu<br>diagnóstico de agua va sin costo</h3>
+      </div>
+      <div class="promo-body">
+        <p>
+          Agenda hoy tu servicio de mantenimiento o tratamiento y te llevamos el análisis
+          inicial de tu alberca <strong>gratis</strong> (medición de pH, cloro y alcalinidad).
+        </p>
+        <div class="promo-urgency">
+          <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
+          Solo <strong>5 diagnósticos gratis</strong> disponibles esta semana
+        </div>
+        <div class="promo-actions">
+          <a href="https://wa.me/5213221925067?text=Hola%2C%20vi%20la%20promoci%C3%B3n%20de%20hoy%20y%20quiero%20mi%20diagn%C3%B3stico%20de%20agua%20sin%20costo%20para%20mi%20alberca."
+             target="_blank" rel="noopener noreferrer" class="promo-btn wa">
+            <i class="fa-brands fa-whatsapp"></i> Cotización directa por WhatsApp
+          </a>
+          <a href="tel:+523221925067" class="promo-btn call">
+            <i class="fa-solid fa-phone"></i> Llamar ahora
+          </a>
+        </div>
+        <p class="promo-fineprint">Aplica para nuevas contrataciones en zona de cobertura.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
